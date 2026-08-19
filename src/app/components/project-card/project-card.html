@@ -1,0 +1,53 @@
+<article class="project-card surface-card">
+  <div class="project-card__header">
+    <div>
+      <span class="project-card__category">{{ project().category }}</span>
+      <h3>{{ project().name }}</h3>
+    </div>
+    <span class="project-card__featured">Featured</span>
+  </div>
+
+  <p class="project-card__summary">{{ project().shortDescription }}</p>
+
+  <div class="project-card__problem">
+    <h4>Problem</h4>
+    <p>{{ project().problem }}</p>
+  </div>
+
+  <div class="project-card__chips">
+    @for (technology of project().technologies; track technology) {
+      <span class="project-card__chip">{{ technology }}</span>
+    }
+  </div>
+
+  <div class="project-card__highlights">
+    <div class="project-card__highlights-top">
+      <h4>Highlights</h4>
+      @if (project().highlights.length > 3) {
+        <button type="button" class="project-card__toggle" (click)="toggleExpanded()">
+          {{ expanded() ? 'Show less' : 'Show more' }}
+        </button>
+      }
+    </div>
+
+    <ul>
+      @for (highlight of visibleHighlights(); track highlight) {
+        <li>{{ highlight }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="project-card__actions">
+    @if (project().githubUrl) {
+      <a class="btn btn--outline" [href]="project().githubUrl" target="_blank" rel="noreferrer noopener">GitHub</a>
+    } @else {
+      <span class="btn btn--ghost is-disabled">GitHub Placeholder</span>
+    }
+
+    @if (project().liveUrl) {
+      <a class="btn btn--primary" [href]="project().liveUrl" target="_blank" rel="noreferrer noopener">Live Demo</a>
+    } @else {
+      <span class="btn btn--ghost is-disabled">Live Demo Placeholder</span>
+    }
+  </div>
+</article>

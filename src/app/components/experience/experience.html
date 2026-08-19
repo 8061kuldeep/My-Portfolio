@@ -1,0 +1,57 @@
+<section id="experience" class="experience" data-reveal>
+  <div class="container">
+    <div class="experience__header">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">A progressive journey across enterprise and product-driven development.</h2>
+      <p class="section-subtitle">
+        From foundational web applications to large-scale enterprise platforms, each role expanded my ownership across delivery, integrations, and observability.
+      </p>
+    </div>
+
+    <div class="experience__timeline">
+      @for (item of experiences; track item.company + item.period) {
+        <article class="experience__item" [class.experience__item--current]="item.current">
+          <div class="experience__marker" aria-hidden="true">
+            <span></span>
+          </div>
+          <div class="experience__card surface-card">
+            <div class="experience__top-row">
+              <div>
+                <p class="experience__company">{{ item.company }}</p>
+                <h3>{{ item.role }}</h3>
+              </div>
+              <div class="experience__period-wrap">
+                <span class="experience__period">{{ item.period }}</span>
+                @if (item.current) {
+                  <span class="experience__current-badge">Current</span>
+                }
+              </div>
+            </div>
+
+            <p class="experience__description">{{ item.description }}</p>
+
+            <div class="experience__meta">
+              <div>
+                <h4>Projects</h4>
+                <div class="experience__tags">
+                  @for (project of item.projects; track project) {
+                    <span class="experience__tag">{{ project }}</span>
+                  }
+                </div>
+              </div>
+
+              <div>
+                <h4>Technologies</h4>
+                <div class="experience__chips">
+                  @for (technology of item.technologies; track technology) {
+                    <span class="experience__chip">{{ technology }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

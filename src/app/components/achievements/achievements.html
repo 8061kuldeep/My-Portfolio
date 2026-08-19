@@ -1,0 +1,23 @@
+<section id="achievements" class="achievements" data-reveal>
+  <div class="container">
+    <div class="achievements__header">
+      <p class="section-label">Achievements</p>
+      <h2 class="section-title">Recognition earned through consistent delivery.</h2>
+      <p class="section-subtitle">
+        Tangible outcomes and appreciation that reflect ownership, execution quality, and reliability.
+      </p>
+    </div>
+
+    <div class="achievements__grid">
+      @for (achievement of achievements; track achievement.title) {
+        <article class="achievements__card surface-card">
+          <span class="achievements__icon" aria-hidden="true">{{ achievement.icon }}</span>
+          <div>
+            <h3>{{ achievement.title }}</h3>
+            <p>{{ achievement.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

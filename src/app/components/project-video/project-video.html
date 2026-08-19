@@ -1,0 +1,49 @@
+<div class="project-video" [class.project-video--disabled]="isDisabled()">
+  <button
+    type="button"
+    class="project-video__preview"
+    [disabled]="isDisabled()"
+    [attr.aria-label]="isDisabled() ? 'Demo video unavailable' : 'Open project video'"
+    (click)="openModal()"
+  >
+    @if (isDisabled()) {
+      <div class="project-video__placeholder">
+        <span>Demo video coming soon</span>
+      </div>
+    } @else {
+      <img [src]="thumbnailUrl()" [alt]="video()?.title ?? 'Project video thumbnail'">
+      <span class="project-video__play">▶</span>
+    }
+  </button>
+
+  @if (video()?.title) {
+    <div class="project-video__caption">
+      <h3>{{ video()?.title }}</h3>
+      @if (video()?.description) {
+        <p>{{ video()?.description }}</p>
+      }
+    </div>
+  }
+</div>
+
+@if (isOpen()) {
+  <div class="project-video__modal" role="dialog" aria-modal="true" [attr.aria-label]="video()?.title ?? 'Project video'">
+    <button type="button" class="project-video__backdrop" aria-label="Close project video" (click)="closeModal()"></button>
+    <div class="project-video__dialog surface-card">
+      <div class="project-video__dialog-header">
+        <h3>{{ video()?.title }}</h3>
+        <button type="button" class="project-video__close" aria-label="Close video" (click)="closeModal()">✕</button>
+      </div>
+      <div class="project-video__frame-wrap">
+        @if (embedUrl(); as safeUrl) {
+          <iframe
+            [src]="safeUrl"
+            [title]="video()?.title ?? 'Project video'"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        }
+      </div>
+    </div>
+  </div>
+}

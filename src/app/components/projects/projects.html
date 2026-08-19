@@ -1,0 +1,17 @@
+<section id="projects" class="projects" data-reveal>
+  <div class="container">
+    <div class="projects__header">
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Selected work across enterprise workflows and platform experiences.</h2>
+      <p class="section-subtitle">
+        Featured projects highlight business process automation, integrations, and scalable product thinking across different domains.
+      </p>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of featuredProjects; track project.id) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>

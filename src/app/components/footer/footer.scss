@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.95);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer__nav button {
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.footer__nav button:hover,
+.footer__nav button:focus-visible {
+  color: var(--text-primary);
+}
+
+.footer__note {
+  color: var(--text-muted);
+}

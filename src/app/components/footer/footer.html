@@ -1,0 +1,13 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© 2026 {{ profile.name }}. All rights reserved.</p>
+
+    <nav class="footer__nav" aria-label="Footer navigation">
+      @for (link of profile.footerLinks; track link.href) {
+        <button type="button" (click)="scrollTo(link.href)">{{ link.label }}</button>
+      }
+    </nav>
+
+    <p class="footer__note">{{ profile.footerNote }}</p>
+  </div>
+</footer>

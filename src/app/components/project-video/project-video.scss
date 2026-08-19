@@ -1,0 +1,109 @@
+:host {
+  display: block;
+}
+
+.project-video__preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.project-video__preview img,
+.project-video__placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.project-video__preview img {
+  object-fit: cover;
+}
+
+.project-video__placeholder {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.16), rgba(15, 15, 26, 0.98));
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.project-video__play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(10, 10, 15, 0.75);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.project-video__caption {
+  margin-top: 1rem;
+}
+
+.project-video__caption p {
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+}
+
+.project-video__modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.project-video__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.84);
+}
+
+.project-video__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  padding: 1.25rem;
+}
+
+.project-video__dialog-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-video__close {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.project-video__frame-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+.project-video__frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+.project-video--disabled {
+  opacity: 0.82;
+}

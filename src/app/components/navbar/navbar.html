@@ -1,0 +1,64 @@
+<header class="navbar" [class.scrolled]="scrolled()">
+  <nav class="navbar__inner container" aria-label="Primary navigation">
+    <button class="navbar__brand" type="button" aria-label="Go to home section" (click)="scrollTo('#home')">
+      <span class="gradient-text">{{ profile.shortBrand }}</span>
+    </button>
+
+    <div class="navbar__desktop">
+      <div class="navbar__links" role="list">
+        @for (link of profile.navLinks; track link.href) {
+          <button type="button" class="navbar__link" (click)="scrollTo(link.href)">{{ link.label }}</button>
+        }
+      </div>
+
+      <div class="navbar__actions">
+        @for (social of profile.socialLinks; track social.label) {
+          <a
+            class="navbar__social"
+            [href]="social.href"
+            [attr.aria-label]="social.label + ' placeholder link'"
+            [attr.title]="social.placeholder"
+          >
+            <span>{{ social.icon }}</span>
+          </a>
+        }
+
+        <button class="navbar__theme-placeholder" type="button" aria-label="Theme toggle placeholder" disabled>◐</button>
+
+        <a class="btn btn--outline navbar__resume" [href]="profile.resumePath" download>
+          Resume
+        </a>
+      </div>
+    </div>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      [class.is-open]="mobileOpen()"
+      [attr.aria-expanded]="mobileOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMobile()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="navbar__mobile" [class.is-open]="mobileOpen()">
+    <div class="navbar__mobile-inner container">
+      @for (link of profile.navLinks; track link.href) {
+        <button type="button" class="navbar__mobile-link" (click)="scrollTo(link.href)">{{ link.label }}</button>
+      }
+
+      <div class="navbar__mobile-actions">
+        @for (social of profile.socialLinks; track social.label) {
+          <a class="navbar__mobile-social" [href]="social.href">{{ social.label }} · {{ social.placeholder }}</a>
+        }
+
+        <a class="btn btn--primary" [href]="profile.resumePath" download>Download Resume</a>
+      </div>
+    </div>
+  </div>
+</header>

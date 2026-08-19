@@ -1,0 +1,42 @@
+<section id="skills" class="skills" data-reveal>
+  <div class="container">
+    <div class="skills__header">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">A stack built for product delivery and modern platform engineering.</h2>
+      <p class="section-subtitle">
+        Strong hands-on experience across frontend, backend, integrations, monitoring, and an active focus on applied AI engineering.
+      </p>
+    </div>
+
+    <div class="skills__grid">
+      @for (category of categories; track category.name) {
+        <article class="skills__card surface-card" [class.skills__card--learning]="category.isLearning">
+          <div class="skills__card-header">
+            <div class="skills__icon" aria-hidden="true">{{ category.icon }}</div>
+            <div>
+              <div class="skills__title-row">
+                <h3>{{ category.name }}</h3>
+                @if (category.isLearning) {
+                  <span class="skills__learning-label">Currently Learning &amp; Building</span>
+                }
+              </div>
+              <p>
+                @if (category.isLearning) {
+                  Actively exploring applied GenAI tooling, retrieval pipelines, and agentic workflows.
+                } @else {
+                  Focused tools and technologies used to build production-ready web applications.
+                }
+              </p>
+            </div>
+          </div>
+
+          <div class="skills__chips">
+            @for (skill of category.skills; track skill) {
+              <span class="skills__chip">{{ skill }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
