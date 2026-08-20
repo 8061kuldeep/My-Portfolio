@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '../../core/emailjs.config';
+import { environment } from '../../../environments/environment';
 import { PROFILE } from '../../data/profile';
 
 @Component({
@@ -32,17 +32,17 @@ export class ContactComponent {
       return;
     }
 
-    const { name, email, message } = this.contactForm.value;
+    const { name, email, message } = this.contactForm.getRawValue();
 
     this.sending.set(true);
     this.sendError.set(false);
 
     emailjs
       .send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
+        environment.emailjs.serviceId,
+        environment.emailjs.templateId,
         { from_name: name, reply_to: email, message },
-        { publicKey: EMAILJS_CONFIG.publicKey }
+        { publicKey: environment.emailjs.publicKey }
       )
       .then(() => {
         this.submitted.set(true);
