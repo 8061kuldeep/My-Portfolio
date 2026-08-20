@@ -16,8 +16,9 @@
           <a
             class="navbar__social"
             [href]="social.href"
-            [attr.aria-label]="social.label + ' placeholder link'"
-            [attr.title]="social.placeholder"
+            target="_blank"
+            [attr.aria-label]="social.label"
+            [attr.title]="social.label"
           >
             <span>{{ social.icon }}</span>
           </a>
@@ -54,7 +55,7 @@
 
       <div class="navbar__mobile-actions">
         @for (social of profile.socialLinks; track social.label) {
-          <a class="navbar__mobile-social" [href]="social.href">{{ social.label }} · {{ social.placeholder }}</a>
+          <a class="navbar__mobile-social" [href]="social.href" target="_blank">{{ social.label }}</a>
         }
 
         <a class="btn btn--primary" [href]="profile.resumePath" download>Download Resume</a>
