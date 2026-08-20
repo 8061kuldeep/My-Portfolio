@@ -35,7 +35,13 @@
       @if (submitted()) {
         <div class="contact__success" role="status" aria-live="polite">
           <h4>Thanks for reaching out.</h4>
-          <p>Your message has been captured in the UI flow successfully.</p>
+          <p>Your message was sent successfully. I'll get back to you soon.</p>
+        </div>
+      }
+
+      @if (sendError()) {
+        <div class="contact__error" role="alert" aria-live="assertive">
+          <p>Something went wrong. Please try again or reach out via email directly.</p>
         </div>
       }
 
@@ -68,7 +74,9 @@
           }
         </label>
 
-        <button class="btn btn--primary" type="submit">Send message</button>
+        <button class="btn btn--primary" type="submit" [disabled]="sending()">
+          {{ sending() ? 'Sending…' : 'Send message' }}
+        </button>
       </form>
     </div>
   </div>

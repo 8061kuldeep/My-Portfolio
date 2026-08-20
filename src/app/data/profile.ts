@@ -88,6 +88,6 @@ export const PROFILE = {
   contactMessage:
     "If you're hiring, collaborating, or discussing engineering ideas, feel free to reach out.",
   contactFormNote:
-    'Front-end only for now. A backend/email service can be connected later.',
+    'Powered by EmailJS. Messages are sent directly to my inbox.',
   footerNote: 'Built with Angular'
 } as const;

@@ -95,6 +95,19 @@
   margin-top: 0.35rem;
 }
 
+.contact__error {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(253, 164, 175, 0.35);
+  background: rgba(253, 164, 175, 0.08);
+}
+
+.contact__error p {
+  color: #fda4af;
+  margin-top: 0;
+}
+
 @media (max-width: 900px) {
   .contact__grid {
     grid-template-columns: 1fr;
