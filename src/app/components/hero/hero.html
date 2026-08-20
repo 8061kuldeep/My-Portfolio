@@ -1,0 +1,35 @@
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__status hero__item hero__item--1">
+        <span class="status-dot"></span>
+        {{ profile.status }}
+      </div>
+      <p class="hero__greeting hero__item hero__item--2">{{ profile.greeting }}</p>
+      <h1 id="hero-title" class="hero__name hero__item hero__item--3">Kuldeep Singh<br><span class="gradient-text">Solanki</span></h1>
+      <h2 class="hero__title hero__item hero__item--4">{{ profile.heroTitle }}</h2>
+      <p class="hero__tagline hero__item hero__item--5">{{ profile.heroTagline }}</p>
+      <p class="hero__description hero__item hero__item--6">{{ profile.heroDescription }}</p>
+      <div class="hero__actions hero__item hero__item--7">
+        <button class="btn btn--primary" type="button" (click)="scrollToSection('projects')">View My Work</button>
+        <a class="btn btn--outline" [href]="profile.resumePath" download>Download Resume</a>
+      </div>
+      <div class="hero__stack hero__item hero__item--8" aria-label="Primary technology stack">
+        @for (tech of profile.heroStack; track tech) {
+          <span class="stack-chip">{{ tech }}</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>

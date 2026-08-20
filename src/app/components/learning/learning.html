@@ -1,0 +1,33 @@
+<section id="learning" class="learning" data-reveal>
+  <div class="container">
+    <div class="learning__header">
+      <p class="section-label">Learning &amp; Growth</p>
+      <h2 class="section-title">Strong foundations, with deliberate expansion into AI engineering.</h2>
+      <p class="section-subtitle">
+        A mix of proven production technologies and focused learning areas shaping the next phase of my engineering journey.
+      </p>
+    </div>
+
+    <div class="learning__grid">
+      <article class="learning__card surface-card">
+        <p class="learning__eyebrow">Technical Expertise</p>
+        <h3>Mastered in delivery work</h3>
+        <div class="learning__chips">
+          @for (item of mastered; track item) {
+            <span class="learning__chip">{{ item }}</span>
+          }
+        </div>
+      </article>
+
+      <article class="learning__card learning__card--exploring surface-card">
+        <p class="learning__eyebrow">Currently Exploring</p>
+        <h3>Learning &amp; building in modern AI systems</h3>
+        <div class="learning__chips">
+          @for (item of exploring; track item) {
+            <span class="learning__chip learning__chip--exploring">{{ item }}</span>
+          }
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

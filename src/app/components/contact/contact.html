@@ -1,0 +1,70 @@
+<section id="contact" class="contact" data-reveal>
+  <div class="container contact__grid">
+    <div class="contact__info">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let’s build thoughtful products and modern engineering experiences.</h2>
+      <p class="section-subtitle">{{ profile.contactIntro }}</p>
+
+      <div class="contact__details surface-card">
+        <div>
+          <p class="contact__detail-label">Email</p>
+          <a class="contact__email" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        </div>
+
+        <p class="contact__message">{{ profile.contactMessage }}</p>
+
+        <div class="contact__socials">
+          @for (social of profile.socialLinks; track social.label) {
+            <a class="btn btn--outline" [href]="social.href" [attr.aria-label]="'Open ' + social.label + ' placeholder'">{{ social.label }} [{{ social.placeholder }}]</a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="contact__form-card surface-card">
+      <div class="contact__form-heading">
+        <h3>Send a message</h3>
+        <p>{{ profile.contactFormNote }}</p>
+      </div>
+
+      @if (submitted()) {
+        <div class="contact__success" role="status" aria-live="polite">
+          <h4>Thanks for reaching out.</h4>
+          <p>Your message has been captured in the UI flow successfully.</p>
+        </div>
+      }
+
+      <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="submit()">
+        <label>
+          <span>Name</span>
+          <input type="text" formControlName="name" placeholder="Your name">
+          @if (hasError('name', 'required')) {
+            <small>Name is required.</small>
+          }
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input type="email" formControlName="email" placeholder="you@example.com">
+          @if (hasError('email', 'required')) {
+            <small>Email is required.</small>
+          } @else if (hasError('email', 'email')) {
+            <small>Enter a valid email address.</small>
+          }
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea rows="5" formControlName="message" placeholder="Tell me about your project, role, or idea."></textarea>
+          @if (hasError('message', 'required')) {
+            <small>Message is required.</small>
+          } @else if (hasError('message', 'minlength')) {
+            <small>Please share a bit more detail.</small>
+          }
+        </label>
+
+        <button class="btn btn--primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>

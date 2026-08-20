@@ -1,0 +1,98 @@
+:host {
+  display: block;
+}
+
+.project-card {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  background: rgba(26, 26, 46, 0.95);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.project-card__header,
+.project-card__highlights-top,
+.project-card__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-card__header h3 {
+  margin-top: 0.35rem;
+  font-size: 1.35rem;
+}
+
+.project-card__category,
+.project-card__featured {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.project-card__category {
+  color: var(--accent-secondary);
+}
+
+.project-card__featured {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  background: rgba(108, 99, 255, 0.12);
+  color: var(--text-primary);
+  height: fit-content;
+}
+
+.project-card__summary,
+.project-card__problem p {
+  color: var(--text-secondary);
+}
+
+.project-card__problem h4,
+.project-card__highlights h4 {
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.project-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.project-card__chip {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.project-card__highlights ul {
+  display: grid;
+  gap: 0.55rem;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.project-card__toggle {
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+.project-card__actions {
+  margin-top: auto;
+  flex-wrap: wrap;
+}

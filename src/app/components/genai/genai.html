@@ -1,0 +1,60 @@
+@if (aiProject; as project) {
+  <section id="genai" class="genai" data-reveal>
+    <div class="container">
+      <div class="genai__hero surface-card">
+        <div class="genai__content">
+          <div>
+            <p class="section-label">Current AI Engineering Project</p>
+            <h2 class="section-title">{{ project.name }}</h2>
+            <p class="genai__summary">{{ project.shortDescription }}</p>
+            <p class="genai__problem">{{ project.problem }}</p>
+          </div>
+
+          <div class="genai__actions">
+            <button class="btn btn--primary" type="button" (click)="scrollToArchitecture()">Architecture</button>
+            <span class="btn btn--ghost is-disabled">GitHub Placeholder</span>
+            <span class="btn btn--ghost is-disabled">Live Demo Placeholder</span>
+            <span class="btn btn--ghost is-disabled">Watch Demo</span>
+          </div>
+
+          <div class="genai__chips">
+            @for (technology of project.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+          </div>
+        </div>
+
+        <div id="genai-architecture" class="genai__diagram" aria-label="RAG system architecture diagram">
+          <div class="genai__diagram-node">Documents</div>
+          <div class="genai__diagram-arrow">→</div>
+          <div class="genai__diagram-node">Chunking</div>
+          <div class="genai__diagram-arrow">→</div>
+          <div class="genai__diagram-node">Embeddings</div>
+          <div class="genai__diagram-arrow">→</div>
+          <div class="genai__diagram-node">Vector DB</div>
+          <div class="genai__diagram-arrow">→</div>
+          <div class="genai__diagram-node">RAG</div>
+          <div class="genai__diagram-arrow">→</div>
+          <div class="genai__diagram-node">LLM</div>
+          <div class="genai__diagram-arrow">→</div>
+          <div class="genai__diagram-node">Response</div>
+        </div>
+      </div>
+
+      <div class="genai__details">
+        <div class="genai__highlights surface-card">
+          <h3>What this project emphasizes</h3>
+          <ul>
+            @for (highlight of project.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="genai__video surface-card">
+          <app-project-video [video]="videoConfig" />
+        </div>
+      </div>
+    </div>
+  </section>
+}

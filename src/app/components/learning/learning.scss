@@ -1,0 +1,61 @@
+:host {
+  display: block;
+}
+
+.learning__header {
+  margin-bottom: 2rem;
+}
+
+.learning__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.learning__card {
+  padding: 1.6rem;
+}
+
+.learning__card--exploring {
+  background: linear-gradient(180deg, rgba(167, 139, 250, 0.16), rgba(19, 19, 31, 0.96));
+}
+
+.learning__eyebrow {
+  color: var(--accent-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.learning__card h3 {
+  margin-top: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.learning__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.learning__chip {
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.learning__chip--exploring {
+  border-color: rgba(167, 139, 250, 0.24);
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .learning__grid {
+    grid-template-columns: 1fr;
+  }
+}
