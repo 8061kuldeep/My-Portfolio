@@ -41,7 +41,7 @@ export class ContactComponent {
       .send(
         environment.emailjs.serviceId,
         environment.emailjs.templateId,
-        { from_name: name, reply_to: email, message },
+        { from_name: name, reply_to: email, user_name: name, user_email: email, message },
         { publicKey: environment.emailjs.publicKey }
       )
       .then(() => {
