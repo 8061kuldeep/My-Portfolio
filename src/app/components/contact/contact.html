@@ -11,11 +11,16 @@
           <a class="contact__email" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
         </div>
 
+        <div>
+          <p class="contact__detail-label">Phone</p>
+          <a class="contact__email" [href]="'tel:' + profile.phone">{{ profile.phone }}</a>
+        </div>
+
         <p class="contact__message">{{ profile.contactMessage }}</p>
 
         <div class="contact__socials">
           @for (social of profile.socialLinks; track social.label) {
-            <a class="btn btn--outline" [href]="social.href" [attr.aria-label]="'Open ' + social.label + ' placeholder'">{{ social.label }} [{{ social.placeholder }}]</a>
+            <a class="btn btn--outline" [href]="social.href" target="_blank" [attr.aria-label]="'Open ' + social.label">{{ social.label }}</a>
           }
         </div>
       </div>
@@ -30,7 +35,13 @@
       @if (submitted()) {
         <div class="contact__success" role="status" aria-live="polite">
           <h4>Thanks for reaching out.</h4>
-          <p>Your message has been captured in the UI flow successfully.</p>
+          <p>Your message was sent successfully. I'll get back to you soon.</p>
+        </div>
+      }
+
+      @if (sendError()) {
+        <div class="contact__error" role="alert" aria-live="assertive">
+          <p>Something went wrong. Please try again or reach out via email directly.</p>
         </div>
       }
 
@@ -63,7 +74,9 @@
           }
         </label>
 
-        <button class="btn btn--primary" type="submit">Send message</button>
+        <button class="btn btn--primary" type="submit" [disabled]="sending()">
+          {{ sending() ? 'Sending…' : 'Send message' }}
+        </button>
       </form>
     </div>
   </div>

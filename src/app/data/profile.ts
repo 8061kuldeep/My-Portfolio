@@ -26,6 +26,7 @@ export const PROFILE = {
   shortBrand: 'KSS',
   role: 'Software Developer',
   email: 'kuldeepsinghsolanki111@gmail.com',
+  phone: '+91 8120683900',
   resumePath: '/assets/resume/Kuldeep-Singh-Solanki-Resume.pdf',
   status: 'Currently exploring → Generative AI Engineering',
   greeting: "Hi, I'm",
@@ -72,8 +73,8 @@ export const PROFILE = {
     { label: 'Contact', href: '#contact' }
   ] satisfies NavLink[],
   socialLinks: [
-    { label: 'GitHub', href: 'YOUR_GITHUB_URL', icon: 'GH', placeholder: 'YOUR_GITHUB_URL' },
-    { label: 'LinkedIn', href: 'YOUR_LINKEDIN_URL', icon: 'in', placeholder: 'YOUR_LINKEDIN_URL' }
+    { label: 'GitHub', href: 'https://github.com/8061kuldeep/', icon: 'GH', placeholder: 'github.com/8061kuldeep' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kuldeep-solanki-4841ba13b/', icon: 'in', placeholder: 'linkedin.com/in/kuldeep-solanki-4841ba13b' }
   ] satisfies SocialLink[],
   footerLinks: [
     { label: 'Home', href: '#home' },
@@ -87,6 +88,6 @@ export const PROFILE = {
   contactMessage:
     "If you're hiring, collaborating, or discussing engineering ideas, feel free to reach out.",
   contactFormNote:
-    'Front-end only for now. A backend/email service can be connected later.',
+    'Powered by EmailJS. Messages are sent directly to my inbox.',
   footerNote: 'Built with Angular'
 } as const;
