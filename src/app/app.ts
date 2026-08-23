@@ -15,15 +15,27 @@ import { ScrollRevealService } from './core/scroll-reveal';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent, HeroComponent, AboutComponent, SkillsComponent, ExperienceComponent, ProjectsComponent, GenaiComponent, AchievementsComponent, LearningComponent, ContactComponent, FooterComponent],
+  imports: [
+    NavbarComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+    GenaiComponent,
+    AchievementsComponent,
+    LearningComponent,
+    ContactComponent,
+    FooterComponent,
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App implements AfterViewInit {
   private readonly scrollReveal = inject(ScrollRevealService);
 
   ngAfterViewInit(): void {
+    console.log('App component initialized');
     requestAnimationFrame(() => this.scrollReveal.init());
   }
 }
-

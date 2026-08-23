@@ -39,55 +39,69 @@ export const PROFILE = {
     'A full-stack developer shaping reliable applications, integrations, and internal platforms across enterprise teams.',
   aboutParagraphs: [
     "I'm a software developer with 5+ years of experience building enterprise web applications and platforms. I've worked across the full stack — from Angular frontends to Node.js/Express backends — delivering business-critical applications for organizations ranging from startups to large enterprises.",
-    "My work spans internal enterprise portals, third-party API integrations, cloud infrastructure and real-time application features. I'm currently deepening my expertise in Generative AI, building RAG-based applications and exploring LLM agent workflows using LangChain, LangGraph and MCP."
+    "My work spans internal enterprise portals, third-party API integrations, cloud infrastructure and real-time application features. I'm currently deepening my expertise in Generative AI, building RAG-based applications and exploring LLM agent workflows using LangChain, LangGraph and MCP.",
   ],
   profileAreas: [
     {
       title: 'Full Stack Development',
-      description: 'Building polished Angular interfaces with scalable Node.js and Express.js backends.'
+      description:
+        'Building polished Angular interfaces with scalable Node.js and Express.js backends.',
     },
     {
       title: 'Enterprise Applications',
-      description: 'Delivering internal portals, workflow systems, and business-critical platforms for teams and clients.'
+      description:
+        'Delivering internal portals, workflow systems, and business-critical platforms for teams and clients.',
     },
     {
       title: 'API & Cloud Integrations',
-      description: 'Connecting applications with JIRA APIs, Google APIs, Azure authentication, and cloud-native services.'
+      description:
+        'Connecting applications with JIRA APIs, Google APIs, Azure authentication, and cloud-native services.',
     },
     {
       title: 'DevOps & Monitoring',
-      description: 'Supporting delivery with CI/CD, Docker, Kubernetes, Kibana, AWS CloudWatch, and Dynatrace.'
+      description:
+        'Supporting delivery with CI/CD, Docker, Kubernetes, Kibana, AWS CloudWatch, and Dynatrace.',
     },
     {
       title: 'AI Engineering',
-      description: 'Exploring RAG-based applications, LangChain workflows, LangGraph orchestration, and MCP-enabled tooling.',
-      exploring: true
-    }
+      description:
+        'Exploring RAG-based applications, LangChain workflows, LangGraph orchestration, and MCP-enabled tooling.',
+      exploring: true,
+    },
   ] satisfies ProfileArea[],
   navLinks: [
-    { label: 'Home', href: '#home' },
+    { label: 'Homee', href: '#homee' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Contact', href: '#contact' },
   ] satisfies NavLink[],
   socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/8061kuldeep/', icon: 'GH', placeholder: 'github.com/8061kuldeep' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kuldeep-solanki-4841ba13b/', icon: 'in', placeholder: 'linkedin.com/in/kuldeep-solanki-4841ba13b' }
+    {
+      label: 'GitHub',
+      href: 'https://github.com/8061kuldeep/',
+      icon: 'GH',
+      placeholder: 'github.com/8061kuldeep',
+    },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/kuldeep-solanki-4841ba13b/',
+      icon: 'in',
+      placeholder: 'linkedin.com/in/kuldeep-solanki-4841ba13b',
+    },
   ] satisfies SocialLink[],
   footerLinks: [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Contact', href: '#contact' },
   ] satisfies FooterLink[],
   contactIntro:
-    "Open to conversations around enterprise platforms, full-stack product work, and emerging AI engineering opportunities.",
+    'Open to conversations around enterprise platforms, full-stack product work, and emerging AI engineering opportunities.',
   contactMessage:
     "If you're hiring, collaborating, or discussing engineering ideas, feel free to reach out.",
-  contactFormNote:
-    'Powered by EmailJS. Messages are sent directly to my inbox.',
-  footerNote: 'Built with Angular'
+  contactFormNote: 'Powered by EmailJS. Messages are sent directly to my inbox.',
+  footerNote: 'Built with Angular',
 } as const;
