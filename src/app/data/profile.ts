@@ -70,7 +70,7 @@ export const PROFILE = {
     },
   ] satisfies ProfileArea[],
   navLinks: [
-    { label: 'Homee', href: '#homee' },
+    { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
